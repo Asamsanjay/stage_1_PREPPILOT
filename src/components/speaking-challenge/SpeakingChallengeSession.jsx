@@ -573,7 +573,7 @@ export default function SpeakingChallengeSession({
                 Finalizing Recording...
               </h3>
               <p style={{ color: '#94a3b8', fontSize: '13.5px', marginTop: '6px' }}>
-                Saving your recording to Supabase and preparing your results.
+                Saving your recording on this device and preparing your results.
               </p>
             </div>
           )}

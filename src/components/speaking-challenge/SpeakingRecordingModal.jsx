@@ -175,7 +175,7 @@ export default function SpeakingRecordingModal({ session, onClose, onDelete }) {
             <div>
               <h3 className="recording-modal-title">Challenge Recording</h3>
               <p className="recording-modal-subtitle">
-                {storageSource === 'cloud' ? 'Stored in Supabase Cloud Storage' : 'Stored in Supabase & Local Cache'}
+                {storageSource === 'cloud' ? 'Stored in Supabase Cloud Storage' : 'Stored on this device'}
               </p>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function SpeakingRecordingModal({ session, onClose, onDelete }) {
             <div className="recording-loading-box">
               <div className="recording-spinner"></div>
               <p style={{ marginTop: '14px', fontSize: '14px', color: '#64748b', fontWeight: 600 }}>
-                Loading recording from Supabase...
+                Loading recording...
               </p>
             </div>
           ) : isMissing ? (
