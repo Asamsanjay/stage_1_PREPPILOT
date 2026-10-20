@@ -200,8 +200,31 @@ export default function App() {
     );
   }
 
+  if (!isSupabaseConfigured()) {
+    return (
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        padding: '24px',
+        background: '#070d19',
+        color: '#fff',
+        fontFamily: 'Poppins, sans-serif',
+        textAlign: 'center'
+      }}>
+        <h1 style={{ fontSize: '24px', fontWeight: 700 }}>PrepPilot setup required</h1>
+        <p style={{ maxWidth: '520px', color: '#94a3b8', lineHeight: 1.6 }}>
+          Authentication is unavailable because this deployment is missing its Supabase configuration.
+          Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to the hosting environment, then redeploy.
+        </p>
+      </div>
+    );
+  }
+
   // If not authenticated, render the AuthPage
-  if (isSupabaseConfigured() && !session) {
+  if (!session) {
     return <AuthPage onLoginSuccess={handleLoginSuccess} />;
   }
 
